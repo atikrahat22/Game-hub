@@ -134,78 +134,6 @@ a:hover {
   font-weight: 800;
 }
 
-.banner-subtitle {
-  color: #ffbe0b;
-  font-size: 1.2rem;
-  margin: 10px 0 0;
-  text-shadow: 0 0 10px rgba(255,190,11,0.5);
-  font-weight: 600;
-}
-@media (min-width: 1200px) {
-  .banner > div {
-    height: 500px !important;
-  }
-
-  .banner-title {
-    font-size: 3.5rem !important;
-  }
-
-  .banner-subtitle {
-    font-size: 1.4rem !important;
-  }
-}
-
-@media (min-width: 1600px) {
-  .banner > div {
-    height: 600px !important;
-  }
-
-  .banner-title {
-    font-size: 4rem !important;
-  }
-
-  .banner-subtitle {
-    font-size: 1.6rem !important;
-  }
-}
-
-/* Large Device Card Enhancements */
-@media (min-width: 1200px) {
-  .card {
-    padding: 25px;
-  }
-
-  .card img {
-    height: 240px;
-  }
-
-  .card h3 {
-    font-size: 1.4rem;
-  }
-
-  .card .small {
-    font-size: 1rem;
-  }
-}
-
-@media (min-width: 1600px) {
-  .card {
-    padding: 30px;
-  }
-
-  .card img {
-    height: 280px;
-  }
-
-  .card h3 {
-    font-size: 1.6rem;
-  }
-
-  .card .small {
-    font-size: 1.1rem;
-  }
-}
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -440,50 +368,194 @@ a:hover {
   border-color: #ff006e;
 }
 
-.banner {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  padding: 15px 0;
-  scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 0, 110, 0.5) rgba(255, 255, 255, 0.05);
+/* Full-Width Banner for Medium and Large Devices */
+.banner-full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-bottom: 40px;
 }
 
-.banner::-webkit-scrollbar {
-  height: 10px;
+.banner-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 0;
 }
 
-.banner::-webkit-scrollbar-track {
-  background: rgba(255,255,255,0.08);
-  border-radius: 15px;
+.banner-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.banner::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #ff006e, #8338ec, #00ffff);
-  border-radius: 15px;
-  box-shadow: 0 0 15px rgba(255, 0, 110, 0.5);
-}
-
-.banner img {
-  min-width: 320px;
-  height: 350px;
+.banner-image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 20px;
-  box-shadow:
-    0 15px 40px rgba(0,0,0,0.5),
-    0 0 30px rgba(255, 0, 110, 0.2);
-  border: 2px solid rgba(255, 0, 110, 0.3);
-  transition: all 0.4s ease;
-  filter: brightness(1.1) contrast(1.1) saturate(1.2);
+  display: block;
 }
 
-.banner img:hover {
-  border-color: #00ffff;
-  box-shadow:
-    0 20px 50px rgba(0, 255, 255, 0.3),
-    0 0 40px rgba(255, 0, 110, 0.4);
-  transform: scale(1.02);
+.banner-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    transparent 0%,
+    rgba(0,0,0,0.3) 40%,
+    rgba(0,0,0,0.9) 100%
+  );
+  padding: 80px 10% 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.banner-title-full {
+  color: white;
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin: 0 0 15px 0;
+  text-shadow:
+    0 0 20px rgba(255,255,255,0.8),
+    0 0 40px rgba(255,0,110,0.5);
+  line-height: 1.1;
+  max-width: 800px;
+}
+
+.banner-subtitle-full {
+  color: #ffbe0b;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+  text-shadow:
+    0 0 15px rgba(255,190,11,0.8),
+    0 0 30px rgba(255,190,11,0.3);
+  max-width: 700px;
+  line-height: 1.3;
+}
+
+.banner-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.banner-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.banner-dot.active {
+  background: linear-gradient(45deg, #ff006e, #8338ec);
+  box-shadow: 0 0 20px rgba(255,0,110,0.6);
+}
+
+.banner-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 24px;
+  color: white;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-arrow:hover {
+  background: rgba(0,0,0,0.8);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 0 25px rgba(255,0,110,0.4);
+}
+
+.banner-arrow-left {
+  left: 30px;
+}
+
+.banner-arrow-right {
+  right: 30px;
+}
+
+/* Mobile Banner Styles (keep old styles for mobile) */
+@media (max-width: 767px) {
+  .banner-full-width {
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 25px;
+  }
+
+  .banner-container {
+    height: 350px;
+    border-radius: 15px;
+    margin: 0 16px;
+  }
+
+  .banner-overlay {
+    padding: 40px 20px 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  }
+
+  .banner-title-full {
+    font-size: 2.2rem;
+  }
+
+  .banner-subtitle-full {
+    font-size: 1.1rem;
+  }
+
+  .banner-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .banner-arrow-left {
+    left: 15px;
+  }
+
+  .banner-arrow-right {
+    right: 15px;
+  }
+
+  .banner-dots {
+    bottom: 15px;
+    gap: 8px;
+  }
+
+  .banner-dot {
+    width: 10px;
+    height: 10px;
+  }
 }
 
 .form {
@@ -638,11 +710,6 @@ h3 {
     margin-top: 30px;
   }
 
-  .banner img {
-    min-width: 350px;
-    height: 400px;
-  }
-
   .banner > div {
     height: 450px !important;
   }
@@ -763,57 +830,117 @@ h3 {
   }
 }
 
-/* Touch-Friendly Enhancements for Medium Devices */
+/* Medium Device Banner Enhancements */
 @media (min-width: 768px) and (max-width: 1199px) {
-  .button {
-    min-height: 44px;
-    min-width: 44px;
-    padding: 12px 22px;
+  .banner-container {
+    height: 550px !important;
   }
 
-  .nav-links a {
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    padding: 8px 12px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+  .banner-title-full {
+    font-size: 4rem !important;
   }
 
-  .nav-links a:hover,
-  .nav-links a:focus {
-    background: rgba(255, 255, 255, 0.1);
-    transform: scale(1.02);
+  .banner-subtitle-full {
+    font-size: 1.6rem !important;
   }
 
-  .card {
-    cursor: pointer;
-    transition: transform 0.2s ease;
+  .banner-overlay {
+    padding: 100px 8% 50px !important;
   }
 
-  .card:hover {
-    transform: translateY(-5px);
+  .banner-arrow {
+    width: 55px !important;
+    height: 55px !important;
+    font-size: 28px !important;
   }
 
-  .profile-pic {
-    min-width: 44px;
-    min-height: 44px;
+  .banner-dots {
+    bottom: 35px !important;
+    gap: 14px !important;
   }
 
-  /* Better scrolling for touch devices */
-  .banner {
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
+  .banner-dot {
+    width: 16px !important;
+    height: 16px !important;
+  }
+}
+
+/* Large Device Banner Enhancements */
+@media (min-width: 1200px) {
+  .banner-container {
+    height: 650px !important;
   }
 
-  .banner img {
-    scroll-snap-align: center;
+  .banner-title-full {
+    font-size: 5rem !important;
   }
 
-  /* Improved tap targets */
-  .logout-btn {
-    min-height: 48px;
-    padding: 12px 24px;
+  .banner-subtitle-full {
+    font-size: 1.8rem !important;
+  }
+
+  .banner-overlay {
+    padding: 120px 10% 60px !important;
+  }
+
+  .banner-arrow {
+    width: 65px !important;
+    height: 65px !important;
+    font-size: 32px !important;
+  }
+
+  .banner-arrow-left {
+    left: 40px !important;
+  }
+
+  .banner-arrow-right {
+    right: 40px !important;
+  }
+
+  .banner-dots {
+    bottom: 40px !important;
+    gap: 16px !important;
+  }
+
+  .banner-dot {
+    width: 18px !important;
+    height: 18px !important;
+  }
+}
+
+@media (min-width: 1600px) {
+  .banner-container {
+    height: 750px !important;
+  }
+
+  .banner-title-full {
+    font-size: 6rem !important;
+  }
+
+  .banner-subtitle-full {
+    font-size: 2rem !important;
+  }
+
+  .banner-overlay {
+    padding: 140px 12% 70px !important;
+  }
+}
+
+@media (min-width: 1920px) {
+  .banner-container {
+    height: 850px !important;
+  }
+
+  .banner-title-full {
+    font-size: 7rem !important;
+  }
+
+  .banner-subtitle-full {
+    font-size: 2.2rem !important;
+  }
+
+  .banner-overlay {
+    padding: 160px 15% 80px !important;
   }
 }
 

@@ -22,7 +22,7 @@ export default function Home(){
 
       <motion.section
         className="container"
-        style={{ marginTop: 30 }}
+        style={{ marginTop: 50 }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -70,7 +70,7 @@ export default function Home(){
       <motion.section
         className="container"
         style={{
-          marginTop: 40,
+          marginTop: 60,
           textAlign: 'center'
         }}
         initial={{ opacity: 0, scale: 0.9 }}
