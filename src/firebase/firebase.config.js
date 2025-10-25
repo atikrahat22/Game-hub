@@ -3,11 +3,11 @@ import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_API_KEY || "demo-api-key",
-  authDomain: import.meta.env.VITE_AUTH_DOMAIN || "demo.firebaseapp.com",
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN || "demo-project.firebaseapp.com",
   projectId: import.meta.env.VITE_PROJECT_ID || "demo-project",
-  storageBucket: import.meta.env.VITE_STORAGE_BUCKET || "demo.appspot.com",
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET || "demo-project.appspot.com",
   messagingSenderId: import.meta.env.VITE_SENDER_ID || "123456789",
-  appId: import.meta.env.VITE_APP_ID || "1:123456789:web:abc123",
+  appId: import.meta.env.VITE_APP_ID || "1:123456789:web:abcdef123456",
 };
 
 let app;
@@ -17,8 +17,9 @@ try {
   app = initializeApp(firebaseConfig);
   auth = getAuth(app);
 } catch (error) {
-  console.warn('Firebase initialization failed. Please configure .env file with your Firebase credentials.');
-  console.warn('See .env.example for required variables.');
+  console.warn('Firebase initialization using demo configuration. Some features may not work.');
+  // Create mock auth object for demo purposes
+  auth = null;
 }
 
 export { auth };

@@ -27,56 +27,173 @@ export default function AllReviews(){
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.6 }}
       >
-        <h1>All Game Reviews</h1>
-        <p className="small" style={{ marginBottom: 20 }}>
-          Browse our complete collection of {games.length} indie game reviews
-        </p>
+        <motion.h1
+          style={{
+            fontSize: '3rem',
+            background: 'linear-gradient(45deg, #ff006e, #8338ec, #3a86ff, #06ffa5)',
+            backgroundSize: '400% 400%',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            animation: 'rainbow 4s ease-in-out infinite',
+            textAlign: 'center',
+            marginBottom: 15,
+            textShadow: '0 0 30px rgba(255, 0, 110, 0.5)'
+          }}
+        >
+          🎮 All Game Reviews
+        </motion.h1>
+        <motion.p
+          className="small"
+          style={{
+            textAlign: 'center',
+            marginBottom: 30,
+            fontSize: '1.2rem',
+            color: '#ffbe0b',
+            textShadow: '0 0 10px rgba(255, 190, 11, 0.4)'
+          }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+        >
+          Browse our complete collection of {games.length} premium games
+        </motion.p>
 
-        <div style={{ display: 'flex', gap: 12, marginBottom: 20, flexWrap: 'wrap' }}>
-          <div>
-            <label className="small" style={{ marginRight: 8 }}>Filter by Category:</label>
-            <select 
-              className="input" 
-              value={filter} 
+        <motion.div
+          style={{
+            display: 'flex',
+            gap: 15,
+            marginBottom: 30,
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            padding: '20px',
+            background: 'linear-gradient(135deg, rgba(255, 0, 110, 0.1), rgba(0, 255, 255, 0.1))',
+            borderRadius: 20,
+            border: '1px solid rgba(255, 0, 110, 0.3)'
+          }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.5 }}
+        >
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.6 }}
+          >
+            <label
+              className="small"
+              style={{
+                marginRight: 10,
+                color: '#00ffff',
+                fontWeight: 600,
+                textShadow: '0 0 5px rgba(0, 255, 255, 0.3)'
+              }}
+            >
+              🎯 Filter by Category:
+            </label>
+            <select
+              className="input"
+              value={filter}
               onChange={e => setFilter(e.target.value)}
-              style={{ width: 'auto', display: 'inline-block' }}
+              style={{
+                width: 'auto',
+                display: 'inline-block',
+                background: 'rgba(0, 255, 255, 0.1)',
+                border: '1px solid rgba(0, 255, 255, 0.3)',
+                color: '#00ffff',
+                fontWeight: 600
+              }}
             >
               {categories.map(cat => (
-                <option key={cat} value={cat}>
+                <option
+                  key={cat}
+                  value={cat}
+                  style={{
+                    background: 'rgba(0, 0, 0, 0.8)',
+                    color: '#00ffff'
+                  }}
+                >
                   {cat.charAt(0).toUpperCase() + cat.slice(1)}
                 </option>
               ))}
             </select>
-          </div>
+          </motion.div>
 
-          <div>
-            <label className="small" style={{ marginRight: 8 }}>Sort by:</label>
-            <select 
-              className="input" 
-              value={sortBy} 
-              onChange={e => setSortBy(e.target.value)}
-              style={{ width: 'auto', display: 'inline-block' }}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.7 }}
+          >
+            <label
+              className="small"
+              style={{
+                marginRight: 10,
+                color: '#ff006e',
+                fontWeight: 600,
+                textShadow: '0 0 5px rgba(255, 0, 110, 0.3)'
+              }}
             >
-              <option value="rating">Rating</option>
-              <option value="name">Name</option>
+              📊 Sort by:
+            </label>
+            <select
+              className="input"
+              value={sortBy}
+              onChange={e => setSortBy(e.target.value)}
+              style={{
+                width: 'auto',
+                display: 'inline-block',
+                background: 'rgba(255, 0, 110, 0.1)',
+                border: '1px solid rgba(255, 0, 110, 0.3)',
+                color: '#ff006e',
+                fontWeight: 600
+              }}
+            >
+              <option
+                value="rating"
+                style={{
+                  background: 'rgba(0, 0, 0, 0.8)',
+                  color: '#ff006e'
+                }}
+              >
+                ⭐ Rating
+              </option>
+              <option
+                value="name"
+                style={{
+                  background: 'rgba(0, 0, 0, 0.8)',
+                  color: '#ff006e'
+                }}
+              >
+                🔤 Name
+              </option>
             </select>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <motion.div 
+        <motion.div
           className="grid"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
+          transition={{ delay: 0.8 }}
         >
           {filteredGames.map((g, index) => (
             <motion.div
               key={g.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 50, scale: 0.8 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{
+                duration: 0.4,
+                delay: index * 0.08,
+                type: "spring",
+                stiffness: 120
+              }}
+              whileHover={{
+                y: -15,
+                scale: 1.05,
+                transition: { duration: 0.2 }
+              }}
             >
               <GameCard game={g} />
             </motion.div>
@@ -84,9 +201,21 @@ export default function AllReviews(){
         </motion.div>
 
         {filteredGames.length === 0 && (
-          <p className="small" style={{ textAlign: 'center', marginTop: 40 }}>
-            No games found in this category.
-          </p>
+          <motion.p
+            className="small"
+            style={{
+              textAlign: 'center',
+              marginTop: 50,
+              fontSize: '1.2rem',
+              color: '#ff4444',
+              textShadow: '0 0 10px rgba(255, 68, 68, 0.5)'
+            }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5 }}
+          >
+            😔 No games found in this category. Try selecting a different filter!
+          </motion.p>
         )}
       </motion.div>
     </div>

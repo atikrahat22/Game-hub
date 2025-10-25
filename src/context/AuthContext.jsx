@@ -21,44 +21,44 @@ export const AuthProvider = ({ children }) => {
 
   const googleLogin = () => {
     if (!auth) {
-      alert('Firebase not configured. Please add your Firebase credentials to .env file.');
+      alert('Firebase authentication is not configured. Please add your Firebase credentials to enable login features.');
       return Promise.reject('Firebase not configured');
     }
     return signInWithPopup(auth, provider);
   };
-  
+
   const login = (email, password) => {
     if (!auth) {
-      alert('Firebase not configured. Please add your Firebase credentials to .env file.');
+      alert('Firebase authentication is not configured. Please add your Firebase credentials to enable login features.');
       return Promise.reject('Firebase not configured');
     }
     return signInWithEmailAndPassword(auth, email, password);
   };
-  
+
   const register = (email, password) => {
     if (!auth) {
-      alert('Firebase not configured. Please add your Firebase credentials to .env file.');
+      alert('Firebase authentication is not configured. Please add your Firebase credentials to enable registration features.');
       return Promise.reject('Firebase not configured');
     }
     return createUserWithEmailAndPassword(auth, email, password);
   };
-  
+
   const logOut = () => {
     if (!auth) return Promise.resolve();
     return signOut(auth);
   };
-  
+
   const resetPassword = (email) => {
     if (!auth) {
-      alert('Firebase not configured. Please add your Firebase credentials to .env file.');
+      alert('Firebase authentication is not configured. Please add your Firebase credentials to enable password reset.');
       return Promise.reject('Firebase not configured');
     }
     return sendPasswordResetEmail(auth, email);
   };
-  
+
   const updateUser = (profile) => {
     if (!auth || !auth.currentUser) {
-      alert('Firebase not configured. Please add your Firebase credentials to .env file.');
+      alert('Firebase authentication is not configured. Please add your Firebase credentials to enable profile updates.');
       return Promise.reject('Firebase not configured');
     }
     return updateProfile(auth.currentUser, profile);
