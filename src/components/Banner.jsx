@@ -70,12 +70,7 @@ export default function Banner(){
               borderRadius: '0 0 15px 15px'
             }}>
               <motion.h1
-                style={{
-                  color: 'white',
-                  fontSize: '2.5rem',
-                  margin: 0,
-                  textShadow: '0 0 20px rgba(255,255,255,0.5)'
-                }}
+                className="banner-title"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
@@ -83,12 +78,7 @@ export default function Banner(){
                 {slides[current].title}
               </motion.h1>
               <motion.p
-                style={{
-                  color: '#ffbe0b',
-                  fontSize: '1.2rem',
-                  margin: '10px 0 0',
-                  textShadow: '0 0 10px rgba(255,190,11,0.5)'
-                }}
+                className="banner-subtitle"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
