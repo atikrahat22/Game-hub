@@ -12,7 +12,7 @@
   {
     "id": "2",
     "title": "Call of Duty: Mobile",
-    "coverPhoto": "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=400&h=300&fit=crop",
+    "coverPhoto": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
     "category": "FPS",
     "downloadLink": "https://www.callofduty.com/mobile",
     "description": "Experience the thrill of Call of Duty on mobile! Fast-paced multiplayer action with classic modes like Team Deathmatch, Domination, and Battle Royale. Customize your loadout and climb the ranks.",
@@ -42,7 +42,7 @@
   {
     "id": "5",
     "title": "Grand Theft Auto V",
-    "coverPhoto": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=400&h=300&fit=crop",
+    "coverPhoto": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
     "category": "Action",
     "downloadLink": "https://www.rockstargames.com/gta-v",
     "description": "Experience the thrilling open-world adventure in Los Santos. Complete missions, explore the vast city, and engage in various activities in this critically acclaimed action game.",
@@ -52,7 +52,7 @@
   {
     "id": "6",
     "title": "Apex Legends",
-    "coverPhoto": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop",
+    "coverPhoto": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=400&h=300&fit=crop",
     "category": "Battle Royale",
     "downloadLink": "https://www.ea.com/games/apex-legends",
     "description": "Choose from a diverse cast of characters and engage in fast-paced battles. Team up with friends and use unique abilities to become the champion in this free-to-play battle royale.",
@@ -62,7 +62,7 @@
   {
     "id": "7",
     "title": "FIFA 24",
-    "coverPhoto": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&h=300&fit=crop",
+    "coverPhoto": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
     "category": "Sports",
     "downloadLink": "https://www.ea.com/games/fifa/fifa-24",
     "description": "Play the world's most popular sport with authentic teams, players, and stadiums. Experience realistic gameplay with advanced AI and stunning graphics in FIFA 24.",
@@ -72,7 +72,7 @@
   {
     "id": "8",
     "title": "Cyberpunk 2077",
-    "coverPhoto": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300&fit=crop",
+    "coverPhoto": "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=400&h=300&fit=crop",
     "category": "RPG",
     "downloadLink": "https://www.cyberpunk.net/en/",
     "description": "Enter the dark future of Night City, a dangerous megalopolis obsessed with power and body modification. Customize your character and make choices that affect the story.",
@@ -82,7 +82,7 @@
   {
     "id": "9",
     "title": "The Legend of Zelda: Breath of the Wild",
-    "coverPhoto": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+    "coverPhoto": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop",
     "category": "Adventure",
     "downloadLink": "https://www.zelda.com/breath-of-the-wild/",
     "description": "Explore the vast kingdom of Hyrule in this open-world adventure. Solve puzzles, battle enemies, and discover the secrets of this beautiful and immersive world.",
@@ -92,7 +92,7 @@
   {
     "id": "10",
     "title": "Valorant",
-    "coverPhoto": "https://images.unsplash.com/photo-1556438064-2d7646166914?w=400&h=300&fit=crop",
+    "coverPhoto": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
     "category": "FPS",
     "downloadLink": "https://playvalorant.com/en-us/",
     "description": "A 5v5 character-based tactical shooter where precise gunplay meets unique agent abilities. Choose your agent and compete in various game modes with strategic gameplay.",
@@ -112,7 +112,7 @@
   {
     "id": "12",
     "title": "Overwatch 2",
-    "coverPhoto": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=400&h=300&fit=crop",
+    "coverPhoto": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400&h=300&fit=crop",
     "category": "FPS",
     "downloadLink": "https://overwatch.blizzard.com/en-us/",
     "description": "Team-based multiplayer first-person shooter with a diverse cast of heroes. Work together to complete objectives and outplay the enemy team in various game modes.",
@@ -122,7 +122,7 @@
   {
     "id": "13",
     "title": "League of Legends",
-    "coverPhoto": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=300&fit=crop",
+    "coverPhoto": "https://images.unsplash.com/photo-1556438064-2d7646166914?w=400&h=300&fit=crop",
     "category": "MOBA",
     "downloadLink": "https://www.leagueoflegends.com/",
     "description": "The world's most popular MOBA game featuring strategic 5v5 battles, unique champions, and competitive gameplay. Master your favorite champion and climb the ranked ladder.",
@@ -142,7 +142,7 @@
   {
     "id": "15",
     "title": "Dota 2",
-    "coverPhoto": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400&h=300&fit=crop",
+    "coverPhoto": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
     "category": "MOBA",
     "downloadLink": "https://www.dota2.com/",
     "description": "Join millions of players in epic 5v5 battles featuring over 120 unique heroes. Master complex strategies and compete in the world's largest esports tournaments.",
